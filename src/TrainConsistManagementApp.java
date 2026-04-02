@@ -1,39 +1,23 @@
-// UC2: Add Passenger Bogies to Train
+// UC3: Track Unique Bogie IDs
 
-import java.util.ArrayList;
+import java.util.HashSet;
 
-public class TrainConsistUC2 {
+public class TrainConsistUC3 {
 
     public static void main(String[] args) {
 
-        // Create ArrayList
-        ArrayList<String> bogies = new ArrayList<>();
+        // Create HashSet
+        HashSet<String> bogieIds = new HashSet<>();
 
-        // Add passenger bogies
-        bogies.add("Sleeper");
-        bogies.add("AC Chair");
-        bogies.add("First Class");
+        // Add bogie IDs (with duplicates)
+        bogieIds.add("BG101");
+        bogieIds.add("BG102");
+        bogieIds.add("BG103");
+        bogieIds.add("BG101"); // duplicate
+        bogieIds.add("BG102"); // duplicate
 
-        // Display after adding
-        System.out.println("Bogies after addition:");
-        System.out.println(bogies);
-
-        // Remove a bogie
-        bogies.remove("AC Chair");
-
-        // Display after removal
-        System.out.println("\nAfter removing AC Chair:");
-        System.out.println(bogies);
-
-        // Check existence
-        if (bogies.contains("Sleeper")) {
-            System.out.println("\nSleeper bogie exists");
-        } else {
-            System.out.println("\nSleeper bogie not found");
-        }
-
-        // Final state
-        System.out.println("\nFinal bogie list:");
-        System.out.println(bogies);
+        // Display unique bogie IDs
+        System.out.println("Unique Bogie IDs:");
+        System.out.println(bogieIds);
     }
 }

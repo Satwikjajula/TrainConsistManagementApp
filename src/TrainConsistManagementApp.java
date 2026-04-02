@@ -1,18 +1,39 @@
-import java.util.ArrayList;
-import java.util.List;
+// UC2: Add Passenger Bogies to Train
 
-public class Train_Consist_Management_App {
+import java.util.ArrayList;
+
+public class TrainConsistUC2 {
 
     public static void main(String[] args) {
 
-        System.out.println("=== Train Consist Management App ===");
-        System.out.println("Initializing Train Consist...");
+        // Create ArrayList
+        ArrayList<String> bogies = new ArrayList<>();
 
-        // Creating an empty list of bogies
-        List<String> bogieList = new ArrayList<>();
+        // Add passenger bogies
+        bogies.add("Sleeper");
+        bogies.add("AC Chair");
+        bogies.add("First Class");
 
-        // Displaying initial summary
-        System.out.println("Initial Bogie Count: " + bogieList.size());
-        System.out.println("Train initialized successfully!");
+        // Display after adding
+        System.out.println("Bogies after addition:");
+        System.out.println(bogies);
+
+        // Remove a bogie
+        bogies.remove("AC Chair");
+
+        // Display after removal
+        System.out.println("\nAfter removing AC Chair:");
+        System.out.println(bogies);
+
+        // Check existence
+        if (bogies.contains("Sleeper")) {
+            System.out.println("\nSleeper bogie exists");
+        } else {
+            System.out.println("\nSleeper bogie not found");
+        }
+
+        // Final state
+        System.out.println("\nFinal bogie list:");
+        System.out.println(bogies);
     }
 }

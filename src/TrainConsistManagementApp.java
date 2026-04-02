@@ -1,11 +1,6 @@
-// UC9: Group Bogies by Type using Stream API and Collectors.groupingBy
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
-// Bogie class reused from UC8 with getters
 class Bogie {
     private String name;
     private int capacity;
@@ -43,13 +38,11 @@ public class TrainConsistManagementApp {
         System.out.println("All Passenger Bogies:");
         bogies.forEach(System.out::println);
 
-        // Group bogies by type (name)
-        Map<String, List<Bogie>> groupedBogies = bogies.stream()
-                .collect(Collectors.groupingBy(Bogie::getName));
+        // Calculate total seating capacity using map() + reduce()
+        int totalSeats = bogies.stream()
+                .map(Bogie::getCapacity)          // extract capacities
+                .reduce(0, Integer::sum);        // sum all capacities
 
-        System.out.println("\nGrouped Bogies by Type:");
-        groupedBogies.forEach((type, list) -> {
-            System.out.println(type + " => " + list);
-        });
+        System.out.println("\nTotal Seating Capacity in Train: " + totalSeats);
     }
 }
